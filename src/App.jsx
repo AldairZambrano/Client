@@ -7,7 +7,6 @@ import { BrowserRouter as Router, Route, Routes, } from 'react-router-dom';
 import Home from './pages/Home';
 import Shop from './pages/Shop';
 import SignIn from './pages/Signin';
-import SignUp from './pages/SignOut';
 import About from './pages/About';
 import Contact from './pages/Contact';
 import Cart from './pages/Cart';
@@ -35,13 +34,13 @@ const App = () => {
     {usuario ? <Router>
       <Header />
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/" element={<Home></Home>} />
         <Route path="/cart" element={<Cart />} />
         <Route path="/shop" element={<Shop />} />
         <Route path="/contact" element={<Contact />} />
-        <Route path="/Sign-in" element={<SignIn correoUsuario={usuario.email}/>} />
-        <Route path="/Sign-up" element={<SignUp />} />
+        <Route path="/Sign-in" element={<SignIn  />}/>
         <Route path="/about" element={<About />} />
+        <Route path="/header" element={<Header correoUsuario={usuario.email} />} />
       </Routes>
       <Footer />
     </Router> : <SignIn></SignIn>}

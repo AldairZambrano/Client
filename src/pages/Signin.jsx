@@ -38,17 +38,17 @@ export default function Signin() {
            {registrando ? 'Registrate' : 'Inicia sesión'}
            </h2>
           <form onSubmit={funcAutentication}>
-          {registrando ? <div className="form-control">
+          {registrando ? <div className="form-contro">
                 <input type="text"  id="nombres" required />
                 <label htmlFor="">Nombres</label>
               </div> :''}
 
-              {registrando ? <div className="form-control">
+              {registrando ? <div className="form-contro">
                 <input type="text"  id="apellidos" required />
                 <label htmlFor="">Apellidos</label>
               </div> :''}
 
-              {registrando ? <div className="form-control">
+              {registrando ? <div className="form-contro">
                 <input type="number"  id="numero" required />
                 <label htmlFor="">Numero telefonico</label>
               </div> :''}
@@ -57,11 +57,11 @@ export default function Signin() {
                 <input type="date"  id="date" required />
                 <label className="label">Fecha de nacimiento</label>
               </div> :''}
-              <div className="form-control">
+              <div className="form-contro">
                 <input type="text"  id="email" required />
                 <label htmlFor="">Email</label>
               </div>
-              <div className="form-control">
+              <div className="form-contro">
                 <input type="password" id="password" required />
                 <label htmlFor="">Contraseña</label>
               </div>
@@ -80,6 +80,7 @@ export default function Signin() {
                                   <button className="btnswicth" onClick={(()=> setRegistrando(!registrando))}>
                                       {registrando ? 'Inicia sesion' : 'Registrate'}
                                   </button>
+                                
             </p>
             <small>
             Esta página está protegida por Google reCAPTCHA para comprobar que no eres un robot.

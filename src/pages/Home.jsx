@@ -7,10 +7,11 @@ import Smbanner from '../Components/SmBanner'
 import Banner3 from '../Components/Banner3'
 import Newsletter from '../Components/Newsletter'
 
-export default function Index () {
+export default function Index ({correoUsuario}) {
     return(
         <>
         <Hero></Hero>
+        {correoUsuario}
         <Feacture></Feacture>
         <Catalogo></Catalogo>
         <Banner></Banner>
