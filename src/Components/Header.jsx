@@ -5,6 +5,12 @@ import { Link } from 'react-router-dom'
 import { Button, Navbar } from "keep-react";
 import { Heart, MagnifyingGlass, ShoppingCart, User,Image } from "phosphor-react";
 
+// firebase
+import appFirebase from '../Credenciales'
+
+import {getAuth, signOut} from 'firebase/auth'
+
+const auth = getAuth(appFirebase)
 
 // eslint-disable-next-line react/prop-types
 const Header = ({correoUsuario}) => {
@@ -44,6 +50,7 @@ return (
             style={{borderBottom: activeLink == './about' ? '2px solid #088178' : 'none'}}><Navbar.Link linkName="about"/></Link>
             <Link to='./Contact' className='nav-link' onClick={() => setActiveLink('./Concact')}
             style={{borderBottom: activeLink == './Concact' ? '2px solid #088178' : 'none'}}><Navbar.Link linkName="Contact" /></Link>
+            <button className="btn btn-primary" onClick={()=>signOut(auth)}>logout</button>
           </Navbar.Container>
         </Navbar.Collapse>
 
