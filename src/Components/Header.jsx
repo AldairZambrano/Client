@@ -29,7 +29,7 @@ return (
           <Link to='./'><Navbar.Link linkName="Home"/></Link>
           <Link to='./shop'><Navbar.Link linkName="Shop"/></Link>
           <Link to='./about'><Navbar.Link linkName="About"/></Link>
-          <Link to='./Contact'><Navbar.Link linkName={correoUsuario}/></Link>
+          <Link to='./Contact'><Navbar.Link linkName="Contact Us"/></Link>
         </Navbar.Container>
         <Navbar.Brand>
           <Image
@@ -67,7 +67,7 @@ return (
               icon={<User size={20} color="#444" />}
               iconAnimation={false}
             />
-           <h1></h1>
+           <span>{correoUsuario}</span>
             <Navbar.Link
               icon={<Heart size={20} color="#444" />}
               iconAnimation={false}

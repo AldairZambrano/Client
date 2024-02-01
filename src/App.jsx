@@ -32,7 +32,7 @@ const App = () => {
   return (
     <>
     {usuario ? <Router>
-      <Header />
+      <Header  correoUsuario={usuario.email} />
       <Routes>
         <Route path="/" element={<Home></Home>} />
         <Route path="/cart" element={<Cart />} />
@@ -40,7 +40,6 @@ const App = () => {
         <Route path="/contact" element={<Contact />} />
         <Route path="/Sign-in" element={<SignIn  />}/>
         <Route path="/about" element={<About />} />
-        <Route path="/header" element={<Header correoUsuario={usuario.email} />} />
       </Routes>
       <Footer />
     </Router> : <SignIn></SignIn>}
