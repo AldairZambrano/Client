@@ -36,7 +36,7 @@ const Cart = () => {
           <thead>
             <tr>
               <td>Remove</td>
-              <td>Image</td>
+              <td className='remove' >Image</td>
               <td>Product</td>
               <td>Price</td>
               <td>Quantity</td>
@@ -52,7 +52,7 @@ const Cart = () => {
                     </i>
                   </Link>
                 </td>
-                <td><img src={item.imagens} alt={`Product ${index}`} /></td>
+                <td className='Image'><img src={item.imagens} alt={`Product ${index}`} /></td>
                 <td>{item.nombre}</td>
                 <td>${item.price}</td>
                 <td>

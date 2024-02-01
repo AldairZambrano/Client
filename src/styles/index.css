@@ -21,7 +21,7 @@ html {
   width: 60px;
 }
 .border {
-  border:  solid #088178
+  border:  solid #088178;
 }
 h1 {
   font-size: 50px;
@@ -942,6 +942,15 @@ padding-top:15px ;
   font-size: 13px;
 }
 
+@media (max-width:1018px) {
+  .Image{
+    display: none !important;
+  }
+  .remove{
+    display: none;
+  }
+}
+
 #coupon{
 width: 50%;
 margin-top: 30px;
@@ -1015,7 +1024,7 @@ margin-top: 30px;
   -moz-transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
   -o-transform: translate(-50%, -50%);
-  background: #92fde8;
+  background: #c9fef3;
 
 }
 
