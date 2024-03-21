@@ -77,14 +77,16 @@ export default function Signin() {
             </form>
             <p>
             {registrando ? "Si ya tienes cuenta " : "No tienes cuenta "}
-                                  <button className="btnswicth" onClick={(()=> setRegistrando(!registrando))}>
-                                      {registrando ? 'Inicia sesion' : 'Registrate'}
+                                  <button onClick={(()=> setRegistrando(!registrando))}>
+                                     {registrando ? 'Iniciar session' : 'Registrarte'}
                                   </button>
                                 
             </p>
             <small>
             Esta página está protegida por Google reCAPTCHA para comprobar que no eres un robot.
             </small>
+          
+        
           </div>
     </div>
   )

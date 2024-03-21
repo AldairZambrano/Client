@@ -1,3 +1,5 @@
+
+
 import appFirebase from '../src/Credenciales'
 import {getAuth, onAuthStateChanged} from 'firebase/auth'
 const auth = getAuth(appFirebase)
@@ -27,6 +29,7 @@ const App = () => {
       setUsuario(null)
     }
   })
+  
 
   
   return (

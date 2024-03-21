@@ -1,17 +1,8 @@
 import { useState } from 'react';
-import Catalogo from '../Components/Catalogo';
-import { Link } from 'react-router-dom';
-
+import { Catalogos } from '../data/mockData';
+import HeroAbout from '../Components/HeroAbaout'
 const Cart = () => {
-  const [cartItems, setCartItems] = useState([]);
-
-
-
-  const addToCart = (item) => {
-    const updatedCart = [...cartItems, { ...item, quantity: 1 }];
-    setCartItems(updatedCart);
-  };
-
+  const [cartItems, setCartItems] = useState(Catalogos.map(item => ({ ...item, quantity: 1 })));
   const removeFromCart = (index) => {
     const updatedCart = [...cartItems];
     updatedCart.splice(index, 1);
@@ -29,14 +20,14 @@ const Cart = () => {
   };
 
   return (
-    <>
-      <Catalogo addToCart={addToCart} cartItems={cartItems} />
+    <> 
+    <HeroAbout></HeroAbout>
       <section id="cart" className="section-p1">
         <table width="100%">
           <thead>
             <tr>
               <td>Remove</td>
-              <td className='remove' >Image</td>
+<td className='remove'>Image</td>
               <td>Product</td>
               <td>Price</td>
               <td>Quantity</td>
@@ -47,14 +38,13 @@ const Cart = () => {
             {cartItems.map((item, index) => (
               <tr key={index}>
                 <td>
-                  <Link>
-                    <i className="far fa-times-circle" onClick={() => removeFromCart(index)}>
-                    </i>
-                  </Link>
+                  <button onClick={() => removeFromCart(index)} >
+                    <i className="far fa-times-circle" ></i>
+                  </button>
                 </td>
                 <td className='Image'><img src={item.imagens} alt={`Product ${index}`} /></td>
-                <td>{item.nombre}</td>
-                <td>${item.price}</td>
+                <td >{item.nombre}</td>
+                <td >${item.price}</td>
                 <td>
                   <input
                     type="number"
@@ -70,13 +60,28 @@ const Cart = () => {
       </section>
 
       <section id="cart-add" className="section-p1">
+      <div id="coupon">
+                    <h3 style={{fontWeight:'bold'}}>Apply Coupon</h3>
+                    <div>
+                        <input type="text" placeholder="Enter yout Coupon"/>
+                        <button className="normal">Apply</button>
+                    </div>
+        </div>
         <div id="subtotal">
-          <h3>Cart Totals</h3>
+          <h3 style={{fontWeight:'bold'}}>Cart Totals</h3>
           <table>
             <tbody>
               <tr>
-                <td>Cart Subtotal</td>
-                <td>${calculateSubtotal()}</td>
+                <td style={{color:'#999595'}}>Cart Subtotal</td>
+                <td style={{color:'#999595'}}>${calculateSubtotal() }</td>
+              </tr>
+              <tr>
+                <td style={{color:'#999595'}}>Shopping</td>
+                <td style={{color:'#999595'}}>free</td>
+              </tr>
+              <tr>
+                <td><strong>Total</strong></td>
+                <td><strong>${calculateSubtotal()}</strong></td>
               </tr>
             </tbody>
           </table>
